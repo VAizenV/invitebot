@@ -18,7 +18,7 @@ async def on_ready():
 async def on_member_join(member):
     await bot.wait_until_ready()  # Attend que le bot soit complètement prêt
     guild = member.guild
-    channel = guild.get_channel(1083893168854024215)  # ID du channel
+    channel = guild.get_channel(CHANNEL_ID)  # ID du channel
     inviter = None
     for invite in await guild.invites():
         if invite.uses > invites.get(invite.inviter.id, 0):
@@ -44,4 +44,4 @@ async def invite(ctx, member: discord.Member):
         await ctx.send(message)
 
 
-bot.run("MTA4Mzg5Mjc2NzYxMDEzMDU1Mg.GHv92R.lzDh70sKVATnQneStMxVJgJZtzlP2Rh12wy6RA")
+bot.run(TOKEN)
